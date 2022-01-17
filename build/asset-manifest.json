@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/roulette/build/static/css/main.961fe716.css",
-    "main.js": "/roulette/build/static/js/main.01cb6dcc.js",
+    "main.css": "/roulette/build/static/css/main.81da682d.css",
+    "main.js": "/roulette/build/static/js/main.8e9969f1.js",
     "static/js/787.e2d25970.chunk.js": "/roulette/build/static/js/787.e2d25970.chunk.js",
     "index.html": "/roulette/build/index.html",
-    "main.961fe716.css.map": "/roulette/build/static/css/main.961fe716.css.map",
-    "main.01cb6dcc.js.map": "/roulette/build/static/js/main.01cb6dcc.js.map",
+    "main.81da682d.css.map": "/roulette/build/static/css/main.81da682d.css.map",
+    "main.8e9969f1.js.map": "/roulette/build/static/js/main.8e9969f1.js.map",
     "787.e2d25970.chunk.js.map": "/roulette/build/static/js/787.e2d25970.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.961fe716.css",
-    "static/js/main.01cb6dcc.js"
+    "static/css/main.81da682d.css",
+    "static/js/main.8e9969f1.js"
   ]
 }

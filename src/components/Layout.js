@@ -21,20 +21,36 @@ class Layout extends React.Component {
       return "green";
     }
   };
+  deleteBet = (idx) => {
+    console.log(idx);
+    this.props.updateMoney(this.props.bet[idx]);
+    this.props.updateBet(idx, -parseInt(this.props.bet[idx]));
+  };
   render() {
     let listItems = [];
     for (let i = 0; i < 50; i++) {
       listItems.push(
         <li
           key={i}
-          className="layout-item"
-          style={{ gridArea: "n" + i, background: this.numberColor(i) }}
+          className={
+            !this.props.ready
+              ? this.props.curNumber == i
+                ? "layout-item-spotlight"
+                : "layout-item"
+              : "layout-item"
+          }
+          style={{
+            gridArea: "n" + i,
+            background: this.numberColor(i),
+          }}
           onDrop={(e) => this.dropHandle(e, i)}
           onDragOver={this.dragOverHandle}
         >
           <div className="layout-number">{numberToName[i]}</div>
           {this.props.bet[i] > 0 && (
-            <div className="layout-bet">{this.props.bet[i]}</div>
+            <div className="layout-bet" onClick={() => this.deleteBet(i)}>
+              {this.props.bet[i]}
+            </div>
           )}
         </li>
       );

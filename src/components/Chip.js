@@ -8,6 +8,9 @@ class Chip extends React.Component {
     e.dataTransfer.setData("text/plain", num);
   };
   render() {
+    if (!this.props.ready) {
+      return null;
+    }
     const arr = [1, 5, 10, 25, 100];
     const listItems = arr.map((item, idx) => (
       <li

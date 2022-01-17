@@ -1,5 +1,5 @@
 .layout {
-  min-height: 40%;
+  height: 40%;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(14, 1fr);
@@ -25,6 +25,30 @@
   list-style-type: none;
   border: 1px white solid;
   color: white;
+  transform: scale(1);
+}
+.layout-item-spotlight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+
+  list-style-type: none;
+  border: 1px white solid;
+  color: white;
+  transform: scale(1);
+  animation-name: curNumber;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1s;
+}
+@keyframes curNumber {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.8);
+  }
 }
 .layout-number {
   font-size: 150%;
@@ -32,4 +56,5 @@
 .layout-bet {
   font-size: 100%;
   color: beige;
+  cursor: pointer;
 }

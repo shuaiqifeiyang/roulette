@@ -6,11 +6,16 @@
 .chip-list {
   display: flex;
   flex-direction: row;
+  column-gap: 10px;
   list-style-type: none;
 }
 .chip-item {
   width: 100px;
   height: 100px;
+  line-height: 100px;
+  box-sizing: border-box;
+  border-radius: 50%;
   border: 1px black solid;
   list-style-type: none;
+  padding: 0;
 }

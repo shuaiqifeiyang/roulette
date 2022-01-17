@@ -12,6 +12,9 @@ class App extends React.Component {
       money: 1000,
       curNumber: 0,
       history: [],
+      inside: 0,
+      outside: 0,
+      readyToBet: true,
     };
   }
   componentDidMount() {
@@ -32,8 +35,10 @@ class App extends React.Component {
   }
   updateBet = (idx, money) => {
     let arr = this.state.bet;
+    console.log(idx);
+    console.log(parseInt(money));
     arr[idx] = parseInt(arr[idx]) + parseInt(money);
-    //console.log(arr[idx]);
+
     this.setState({ bet: arr });
   };
   updateMoney = (diff) => {
@@ -53,19 +58,22 @@ class App extends React.Component {
         multiple[numberToLayout[nextNumber][i]];
     }
 
+    this.setState({
+      curNumber: nextNumber,
+      history: nextHistory,
+      money: nextMoney,
+      readyToBet: false,
+    });
+  };
+  clearTable = () => {
     let nextBet = [];
     for (let i = 0; i < 50; i++) {
       nextBet.push(0);
     }
     this.setState({
-      curNumber: nextNumber,
-      history: nextHistory,
-      money: nextMoney,
+      readyToBet: true,
       bet: nextBet,
     });
-    // check bet
-
-    //
   };
   render() {
     return (
@@ -75,13 +83,17 @@ class App extends React.Component {
           history={this.state.history}
           start={this.start}
           money={this.state.money}
+          ready={this.state.readyToBet}
+          clearTable={this.clearTable}
         ></Board>
         <Layout
           bet={this.state.bet}
           updateBet={this.updateBet}
           updateMoney={this.updateMoney}
+          ready={this.state.readyToBet}
+          curNumber={this.state.curNumber}
         ></Layout>
-        <Chip money={this.state.money}></Chip>
+        <Chip money={this.state.money} ready={this.state.readyToBet}></Chip>
       </div>
     );
   }

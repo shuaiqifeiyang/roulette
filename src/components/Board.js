@@ -27,6 +27,12 @@ class Board extends React.Component {
     return (
       <div className="board">
         <div className="board-information">
+          {/* <div>
+            min: 15
+            <br />
+            max:1000
+          </div> */}
+
           <div>
             Your current money: <br />
             {this.props.money}
@@ -37,12 +43,23 @@ class Board extends React.Component {
             className="board-bet-number"
             style={{ color: color[this.props.curNumber] }}
           >
-            {this.props.curNumber}
+            {numberToName[this.props.curNumber]}
           </div>
           <ul className="board-bet-history">{historyItems}</ul>
         </div>
         <div className="board-button">
-          <button onClick={this.props.start}>start</button>
+          {this.props.ready ? (
+            <button onClick={this.props.start} className="board-button-start">
+              start
+            </button>
+          ) : (
+            <button
+              onClick={this.props.clearTable}
+              className="board-button-clear"
+            >
+              clear
+            </button>
+          )}
         </div>
       </div>
     );
