@@ -1,0 +1,47 @@
+.board {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.board-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.board-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.board-button button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+  border-width: 3px;
+  border-color: red;
+  padding: 0;
+  border-style: solid;
+}
+.board-bet {
+  display: flex;
+  flex-wrap: nowrap;
+
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+}
+.board-bet-number {
+  width: 50%;
+}
+.board-bet-history {
+  width: 50%;
+  height: 100%;
+  border: 1px solid black;
+  padding-inline-start: 0;
+}
+.board-bet-history-item {
+  list-style-type: none;
+  height: 6.67%;
+}

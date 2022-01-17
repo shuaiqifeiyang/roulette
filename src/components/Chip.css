@@ -1,0 +1,16 @@
+.chip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chip-list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+.chip-item {
+  width: 100px;
+  height: 100px;
+  border: 1px black solid;
+  list-style-type: none;
+}
